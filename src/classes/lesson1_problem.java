@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class lesson1_problem {
     public static void main(String[] args) {
-        int[] arr = {1, -2, 3, 5, -6};
+        int[] arr = {1, -2, 3, 5, -6, 10, 50, 11, -3, -31};
 
         dynaarr result = PositiveNum(arr);
 
@@ -21,7 +21,7 @@ public class lesson1_problem {
         dynaarr Dynaarr = new dynaarr();
         for (int value : arr) {
             if (value > 0) {
-                add(Dynaarr, value);
+                Dynaarr.add(value);
             }
         }
 
@@ -29,12 +29,5 @@ public class lesson1_problem {
 
     }
 
-    private static void add(dynaarr Dynaarr, int value) {
-        if (Dynaarr.count == Dynaarr.result.length) {
-            int[] newArray = new int[Dynaarr.result.length * 2];
-            System.arraycopy(Dynaarr.result, 0, newArray, 0, Dynaarr.result.length);
-            Dynaarr.result = newArray;
-        }
-        Dynaarr.result[Dynaarr.count++] = value;
-    }
+
 }
