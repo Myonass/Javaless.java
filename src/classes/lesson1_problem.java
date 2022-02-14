@@ -17,17 +17,24 @@ public class lesson1_problem {
     }
 
     private static dynaarr PositiveNum(int[] arr) {
-        int[] result = new int[arr.length];
-        int count = 0;
+
+        dynaarr Dynaarr = new dynaarr();
         for (int value : arr) {
             if (value > 0) {
-                result[count++] = value;
+                add(Dynaarr, value);
             }
         }
-        dynaarr Dynaarr = new dynaarr();
-        Dynaarr.result = result;
-        Dynaarr.count = count;
+
         return Dynaarr;
 
+    }
+
+    private static void add(dynaarr Dynaarr, int value) {
+        if (Dynaarr.count == Dynaarr.result.length) {
+            int[] newArray = new int[Dynaarr.result.length * 2];
+            System.arraycopy(Dynaarr.result, 0, newArray, 0, Dynaarr.result.length);
+            Dynaarr.result = newArray;
+        }
+        Dynaarr.result[Dynaarr.count++] = value;
     }
 }

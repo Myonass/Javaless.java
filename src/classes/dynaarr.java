@@ -2,7 +2,7 @@ package classes;
 
 public class dynaarr {
 
-    int[] result;
+    int[] result = new int[5];
 
     int count;
 }
